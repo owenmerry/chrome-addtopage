@@ -1,6 +1,7 @@
 <!DOCTYPE html>
   <html>
     <head>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
       <style>
         button {
           height: 30px;
@@ -21,6 +22,13 @@
 
       <div>button4:</div>
       <button id="changeColor04">Button 4</button>
+
+      <button type="button" onclick="loadDoc()">Request data</button>
+
+      <div>bookmarks:</div>
+      <button id="getbookmarks">Get Bookmarks</button>
+
+      <p id="demo"></p>
 
       <script src="popup.js"></script>
     </body>

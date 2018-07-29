@@ -61,3 +61,54 @@ let changeColor04 = document.getElementById('changeColor04');
 
 
 
+  changeColor04.onclick = function(element) {
+
+        
+        
+        chrome.tabs.query({active: true, currentWindow: true}, function(tabs) {
+          chrome.tabs.executeScript(
+              tabs[0].id,
+              {code: 'document.body.style.backgroundColor = "purple";alert("changed");'});
+        });
+
+
+  };
+
+  $(function() {
+    $('#getbookmarks').click(function() {
+      
+
+      //get tree view
+      var getbookmarks = chrome.bookmarks.getTree(
+        function(getbookmarks){
+         // console.log(getbookmarks);
+        }
+      );
+
+
+      function onFulfilled(bookmarks) {
+        for (bookmark of bookmarks) {
+          console.log(bookmark.url);
+        }
+      }
+      
+      function onRejected(error) {
+        console.log(`An error: ${error}`);
+      }
+      
+      var gettingRecent = chrome.bookmarks.getRecent(99999999,
+        function(gettingRecent){
+           console.log(gettingRecent);
+         }
+      );
+      //gettingRecent.then(onFulfilled, onRejected);
+      
+
+
+    });
+  });
+
+
+
+
+
