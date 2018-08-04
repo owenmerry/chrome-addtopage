@@ -3,11 +3,15 @@
     "version": "1.0",
     "description": "Build an Extension!",
     "permissions": [
+      "tabs",
       "activeTab",
       "declarativeContent",
       "storage",
       "bookmarks",
-      "http://webshare.me/"
+      "http://webshare.me/",
+      "http://local.webshare.me/",
+      "https://maxcdn.bootstrapcdn.com",
+      "https://cdnjs.cloudflare.com"
     ],
     "background": {
       "scripts": ["background.js"],
