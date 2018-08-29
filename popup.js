@@ -142,7 +142,8 @@ $('.importwebshare').click(function() {
 
     }
   );
-
+	
+	
 
 
 
@@ -151,6 +152,32 @@ $('.importwebshare').click(function() {
 
 
 
+
+	
+	$('.loggedinwebshare').click(function(){
+		
+		alert('clicked');
+		
+		
+		
+		
+		$.ajax({
+    url: "http://google.ie",
+    type: 'GET',
+    success: function(res) {
+      $('.loggedinwebshare').html('checked');
+			console.log(res);
+    },
+    error: function(err){
+      $('.loggedinwebshare').html('checking Failed');
+			console.log(err);
+    }
+    });
+		
+		
+		
+		
+		});
 
 
 
